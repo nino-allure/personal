@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Replica Sneaker — Anton Markov</title>
+    <meta name="description" content="Editorial case study on the Margiela Replica — a sneaker that moved from military utility into fashion culture." />
+    <meta property="og:title" content="Replica Sneaker — Anton Markov" />
+    <meta property="og:description" content="From barracks to runway. Visual research on the Margiela GAT." />
+    <meta property="og:image" content="./img/gat.png" />
+    <meta property="og:type" content="website" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fafaf9;
+            color: #1c1917;
+        }
+
+        .fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 0.7s ease;
+        }
+
+        .fade.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .big {
+            font-size: clamp(36px, 6vw, 80px);
+            font-weight: 800;
+            line-height: 1.05;
+        }
+
+        .section {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 20px;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const items = document.querySelectorAll(".fade");
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add("show");
+                });
+            }, { threshold: 0.1 });
+            items.forEach(el => observer.observe(el));
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <section class="min-h-[90vh] flex items-center px-6">
+        <div class="section">
+            <a href="index.html" class="text-sm text-neutral-400">← back</a>
+
+            <h1 class="big mt-6">
+                from barracks<br>to runway
+            </h1>
+
+            <p class="mt-6 text-neutral-500 max-w-md">
+                editorial case study on the Margiela Replica — a sneaker that moved from military utility into fashion culture
+            </p>
+
+            <p class="text-sm text-neutral-400 mt-4">visual research / fashion storytelling / 2026</p>
+        </div>
+    </section>
+
+    <!-- COVER IMAGE -->
+    <section class="px-6 fade">
+        <div class="section">
+            <img src="./img/post1.png" alt="Margiela Replica sneaker on clean background" loading="lazy">
+        </div>
+    </section>
+
+    <!-- CONTEXT -->
+    <section class="px-6 py-24 fade">
+        <div class="section grid md:grid-cols-2 gap-10">
+            <div>
+                <h2 class="text-xl font-semibold mb-4">the context</h2>
+            </div>
+            <div>
+                <p class="text-sm text-neutral-600 leading-relaxed">
+                    the German Army Trainer (GAT) was originally developed in the 1970s as a standard-issue indoor
+                    training shoe for the Bundeswehr.
+                    built for durability, everyday utility, and minimal cost — leather upper, suede panels, gum rubber
+                    sole.
+                    decades later, this anonymous piece of military equipment would become one of fashion's most quietly
+                    iconic objects.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMAGE 2 -->
+    <section class="px-6 fade">
+        <div class="section">
+            <img src="./img/post2.png" alt="Original GAT military trainer design detail" loading="lazy">
+        </div>
+    </section>
+
+    <!-- THE TRANSITION -->
+    <section class="px-6 py-24 fade">
+        <div class="section">
+            <h2 class="big">luxury in<br>anonymity</h2>
+            <div class="grid md:grid-cols-2 gap-10 mt-8">
+                <p class="text-sm text-neutral-600 leading-relaxed">
+                    in the late 1990s, Martin Margiela began reworking vintage military trainers into his own Replica
+                    concept.
+                    rather than chasing loud branding, he leaned into restraint: clean lines, minimal logos, and a label
+                    that referenced the original object's provenance rather than shouting the designer's name.
+                </p>
+                <p class="text-sm text-neutral-600 leading-relaxed">
+                    the Replica label — stamped with "reproduction of found garments" — became a signature. it
+                    documented the source, material, and period, treating the sneaker as a museum piece rather than a
+                    product.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMAGE 3 -->
+    <section class="px-6 fade">
+        <div class="section">
+            <img src="./img/post3.png" alt="Replica label detail stamped on shoe tongue" loading="lazy">
+        </div>
+    </section>
+
+    <!-- DESIGN PHILOSOPHY -->
+    <section class="px-6 py-24 fade">
+        <div class="section grid md:grid-cols-2 gap-10">
+            <div>
+                <h2 class="text-xl font-semibold mb-4">design philosophy</h2>
+            </div>
+            <div>
+                <p class="text-sm text-neutral-600 leading-relaxed">
+                    "Replica" in Margiela language means a faithful re-creation of an existing object — not a knockoff.
+                    the shoe celebrates the original silhouette while elevating materials and finishing: Italian calf
+                    leather, refined suede panels, subtle heel stitching. the magic is in how little it announces itself.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMAGE GRID -->
+    <section class="px-6 fade">
+        <div class="section grid md:grid-cols-2 gap-4">
+            <img src="./img/post4.png" alt="Replica sneaker variants in different colourways" loading="lazy">
+            <img src="./img/post5.png" alt="Material and construction detail close-up" loading="lazy">
+        </div>
+    </section>
+
+    <!-- CULTURAL IMPACT -->
+    <section class="px-6 py-24 fade">
+        <div class="section">
+            <h2 class="big">the anti-hype<br>shoe</h2>
+            <div class="grid md:grid-cols-2 gap-10 mt-8">
+                <p class="text-sm text-neutral-600 leading-relaxed">
+                    the Replica GAT became a cult favorite precisely because it looks low-key but carries serious
+                    fashion history.
+                    it became the shoe for people who know — recognized by insiders, invisible to everyone else.
+                </p>
+                <p class="text-sm text-neutral-600 leading-relaxed">
+                    Margiela's philosophy of found objects, uniforms, and deconstruction fits this piece perfectly:
+                    an ordinary shoe reintroduced as something new by changing context, material, and meaning.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL -->
+    <section class="px-6 py-24 fade">
+        <div class="section text-center">
+            <h2 class="text-2xl font-semibold mb-4">not fake. not copy. a tribute.</h2>
+            <p class="text-sm text-neutral-500 max-w-xl mx-auto leading-relaxed">
+                a reinterpretation that respects the original while elevating it into a cultural object.
+                same silhouette, totally different message.
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <section class="px-6 py-12">
+        <div class="section text-center text-xs text-neutral-400">
+            © 2026 ninoallure · <a href="index.html" class="underline">← back to portfolio</a>
+        </div>
+    </section>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #d6d3d1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #a8a29e; }
+    </style>
+
+    <script>
+        class SmoothScroll {
+            constructor(options = {}) {
+                this.targetY = window.scrollY;
+                this.currentY = window.scrollY;
+                this.ease = options.ease || 0.075;
+                this.isScrolling = false;
+                this.init();
+            }
+            init() {
+                document.documentElement.style.scrollBehavior = 'auto';
+                window.addEventListener('wheel', (e) => {
+                    e.preventDefault();
+                    this.targetY += e.deltaY;
+                    this.targetY = Math.max(0, Math.min(this.targetY, document.body.scrollHeight - window.innerHeight));
+                    if (!this.isScrolling) { this.isScrolling = true; this.animate(); }
+                }, { passive: false });
+            }
+            animate() {
+                const diff = this.targetY - this.currentY;
+                if (Math.abs(diff) < 0.5) { this.currentY = this.targetY; window.scrollTo(0, this.currentY); this.isScrolling = false; return; }
+                this.currentY += diff * this.ease;
+                window.scrollTo(0, this.currentY);
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                new SmoothScroll({ ease: 0.08 });
+            }
+        });
+    </script>
+</body>
+</html>

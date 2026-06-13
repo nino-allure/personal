@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Тьюторский корпус — Anton Markov</title>
+    <meta name="description" content="Фирменный стиль, посты, баннеры и шаблон презентаций для тьюторского корпуса КГПАОУ Авиатехникум, Пермь. Дизайн, лидерство, арт-дирекшн." />
+    <meta property="og:title" content="Тьюторский корпус — Anton Markov" />
+    <meta property="og:description" content="Айдентика и контент-дизайн для нового направления авиатехникума Перми." />
+    <meta property="og:image" content="./img/avia-cover.png" />
+    <meta property="og:type" content="website" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fafaf9;
+            color: #1c1917;
+        }
+
+        .fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 0.7s ease;
+        }
+
+        .fade.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .big {
+            font-size: clamp(36px, 6vw, 80px);
+            font-weight: 800;
+            line-height: 1.05;
+        }
+
+        .section {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* gallery grid */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            align-items: start;
+        }
+
+        @media (max-width: 860px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 520px) { .gallery { grid-template-columns: 1fr; } }
+
+        .gallery-item {
+            border-radius: 14px;
+            clip-path: inset(0 round 14px);
+            background: #f0efee;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            display: block;
+            transition: filter 0.3s ease, transform 0.35s ease;
+        }
+
+        .gallery-item:hover img {
+            filter: brightness(0.92);
+            transform: scale(1.03);
+        }
+
+        /* section label */
+        .label {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: .07em;
+            text-transform: uppercase;
+            color: #a8a29e;
+            margin-bottom: 1rem;
+        }
+
+        /* stat chips */
+        .chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 0.5px solid #e7e5e4;
+            border-radius: 99px;
+            padding: 6px 14px;
+            font-size: 12px;
+            color: #57534e;
+            background: #fff;
+        }
+
+        .chip-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #1c1917;
+            flex-shrink: 0;
+        }
+
+        /* role badge */
+        .role-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 99px;
+            background: #1c1917;
+            color: #fafaf9;
+        }
+
+        /* section divider */
+        .divider {
+            border: none;
+            border-top: 0.5px solid #e7e5e4;
+            margin: 0;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("show"); });
+            }, { threshold: 0.08 });
+            document.querySelectorAll(".fade").forEach(el => observer.observe(el));
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <section class="min-h-[80vh] flex items-center px-6">
+        <div class="section">
+            <a href="index.html" class="text-sm text-neutral-400">← назад</a>
+
+            <div class="mt-8 flex flex-wrap gap-2 mb-6">
+                <span class="role-badge">лид</span>
+                <span class="role-badge" style="background:#3b3936;">арт-директор</span>
+                <span class="role-badge" style="background:#6b6460;">дизайнер</span>
+            </div>
+
+            <h1 class="big">
+                тьюторский<br>корпус
+            </h1>
+
+            <p class="mt-6 text-neutral-500 max-w-lg leading-relaxed">
+                фирменный стиль, контент-дизайн и шаблоны для нового направления
+                КГПАОУ «Авиатехникум» — с нуля до полноценной системы
+            </p>
+
+            <p class="text-sm text-neutral-400 mt-4">айдентика / смм / презентации · Пермь · 2026</p>
+
+            <div class="flex flex-wrap gap-3 mt-8">
+                <span class="chip"><span class="chip-dot"></span>8 вариаций логотипа</span>
+                <span class="chip"><span class="chip-dot"></span>28 слайдов презентации</span>
+                <span class="chip"><span class="chip-dot"></span>4 серии постов</span>
+                <span class="chip"><span class="chip-dot"></span>баннеры и сторис</span>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider fade">
+
+    <!-- О ПРОЕКТЕ -->
+    <section class="px-6 py-24 fade">
+        <div class="section grid md:grid-cols-2 gap-10">
+            <div>
+                <p class="label">контекст</p>
+                <h2 class="text-xl font-semibold">что это и зачем</h2>
+            </div>
+            <div class="space-y-4">
+                <p class="text-sm text-neutral-600 leading-relaxed">
+                    тьюторский корпус — новое направление в авиатехникуме: наставничество, поддержка студентов,
+                    связь между поколениями внутри учебного заведения.
+                </p>
+                <p class="text-sm text-neutral-600 leading-relaxed">
+                    задача: создать узнаваемый визуальный язык для нового сообщества — с нуля, без референсов.
+                    сделать так, чтобы посты, баннеры и презентации читались как единое целое.
+                </p>
+                <p class="text-sm text-neutral-600 leading-relaxed">
+                    я выступал лидом и арт-директором: принимал решения по стилю, сам делал большую часть материалов
+                    и координировал команду.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider fade">
+
+    <!-- ФИРСТИЛЬ -->
+    <section class="px-6 py-24 fade">
+        <div class="section">
+            <p class="label">01 — айдентика</p>
+            <h2 class="big">фирменный<br>стиль</h2>
+            <p class="text-sm text-neutral-600 max-w-lg mt-6 mb-12 leading-relaxed">
+                8 вариаций логотипа под разные носители — от аватарки до баннера.
+                плашка и основной баннер в едином ключе.
+            </p>
+
+            <div class="gallery">
+                <!-- логотипы 1–4 -->
+                <div class="gallery-item">
+                    <img src="./img/avia/logo1.png" alt="Тьюторский корпус — логотип вариант 1" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="./img/avia/logo2.png" alt="Тьюторский корпус — логотип вариант 2" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="./img/avia/logo3.png" alt="Тьюторский корпус — логотип вариант 3" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="./img/avia/logo4.png" alt="Тьюторский корпус — логотип вариант 4" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="./img/avia/logo5.png" alt="Тьюторский корпус — логотип вариант 5" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="./img/avia/logo6.png" alt="Тьюторский корпус — логотип вариант 6" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="./img/avia/logo7.png" alt="Тьюторский корпус — логотип вариант 7" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="./img/avia/logo8.png" alt="Тьюторский корпус — логотип вариант 8" loading="lazy">
+                </div>
+                <!-- плашка и баннер -->
+                <div class="gallery-item">
+                    <img src="./img/avia/plashka.png" alt="Тьюторский корпус — фирменная плашка" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="./img/avia/banner-identity.png" alt="Тьюторский корпус — основной баннер" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider fade">
+
+    <!-- ПОСТЫ -->
+    <section class="px-6 py-24 fade">
+        <div class="section">
+            <p class="label">02 — контент</p>
+            <h2 class="big">посты для<br>соцсетей</h2>
+            <p class="text-sm text-neutral-600 max-w-lg mt-6 mb-12 leading-relaxed">
+                четыре серии постов: 4, 7, 5 и 6 карточек. каждая серия — отдельная история,
+                единый стиль внутри и между сериями.
+            </p>
+
+            <!-- серия 1 — 4 карточки -->
+            <p class="label mb-4">серия 1</p>
+            <div class="gallery mb-12">
+                <div class="gallery-item"><img src="./img/avia/post1-1.png" alt="Серия 1 — карточка 1" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/post1-2.png" alt="Серия 1 — карточка 2" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/post1-3.png" alt="Серия 1 — карточка 3" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/post1-4.png" alt="Серия 1 — карточка 4" loading="lazy"></div>
+            </div>
+
+            <!-- серия 2 — 7 карточек -->
+            <p class="label mb-4">серия 2</p>
+            <div class="gallery mb-12">
+                <div class="gallery-item"><img src="./img/avia/post2-1.png" alt="Серия 2 — карточка 1" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/post2-2.png" alt="Серия 2 — карточка 2" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/post2-3.png" alt="Серия 2 — карточка 3" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/post2-4.png" alt="Серия 2 — карточка 4" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/post2-5.png" alt="Серия 2 — карточка 5" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/post2-6.png" alt="Серия 2 — карточка 6" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/post2-7.png" alt="Серия 2 — карточка 7" loading="lazy"></div>
+            </div>
+
+            <!-- серия 3 — 5 карточек -->
+            <p class="label mb-4">серия 3</p>
+            <div class="gallery mb-12">
+                <div class="gallery-item"><img src="./img/avia/post3-1.png" alt="Серия 3 — карточка 1" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/post3-2.png" alt="Серия 3 — карточка 2" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/post3-3.png" alt="Серия 3 — карточка 3" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/post3-4.png" alt="Серия 3 — карточка 4" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/post3-5.png" alt="Серия 3 — карточка 5" loading="lazy"></div>
+            </div>
+
+            <!-- серия 4 — 6 карточек -->
+            <p class="label mb-4">серия 4</p>
+            <div class="gallery">
+                <div class="gallery-item"><img src="./img/avia/post4-1.png" alt="Серия 4 — карточка 1" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/post4-2.png" alt="Серия 4 — карточка 2" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/post4-3.png" alt="Серия 4 — карточка 3" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/post4-4.png" alt="Серия 4 — карточка 4" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/post4-5.png" alt="Серия 4 — карточка 5" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/post4-6.png" alt="Серия 4 — карточка 6" loading="lazy"></div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider fade">
+
+    <!-- БАННЕРЫ И СТОРИС -->
+    <section class="px-6 py-24 fade">
+        <div class="section">
+            <p class="label">03 — баннеры и сторис</p>
+            <h2 class="big">форматы</h2>
+            <p class="text-sm text-neutral-600 max-w-lg mt-6 mb-12 leading-relaxed">
+                три баннера для внешних носителей и 4 шаблона для историй —
+                вертикальный формат, адаптированный под мобильный контент.
+            </p>
+
+            <div class="gallery">
+                <div class="gallery-item"><img src="./img/avia/banner1.png" alt="Тьюторский корпус — баннер 1" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/banner2.png" alt="Тьюторский корпус — баннер 2" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/banner3.png" alt="Тьюторский корпус — баннер 3" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/story1.png" alt="Тьюторский корпус — шаблон сторис 1" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/story2.png" alt="Тьюторский корпус — шаблон сторис 2" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/story3.png" alt="Тьюторский корпус — шаблон сторис 3" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/story4.png" alt="Тьюторский корпус — шаблон сторис 4" loading="lazy"></div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider fade">
+
+    <!-- ПРЕЗЕНТАЦИЯ -->
+    <section class="px-6 py-24 fade">
+        <div class="section">
+            <p class="label">04 — презентация</p>
+            <h2 class="big">28 слайдов</h2>
+            <p class="text-sm text-neutral-600 max-w-lg mt-6 mb-12 leading-relaxed">
+                шаблон презентации для тьюторского корпуса — единый стиль с айдентикой,
+                масштабируется под любой контент.
+            </p>
+
+            <div class="gallery">
+                <!-- слайды 1–28 -->
+                <div class="gallery-item"><img src="./img/avia/slide01.png" alt="Презентация — слайд 1" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/slide02.png" alt="Презентация — слайд 2" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/slide03.png" alt="Презентация — слайд 3" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/slide04.png" alt="Презентация — слайд 4" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/slide05.png" alt="Презентация — слайд 5" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/slide06.png" alt="Презентация — слайд 6" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/slide07.png" alt="Презентация — слайд 7" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/slide08.png" alt="Презентация — слайд 8" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/slide09.png" alt="Презентация — слайд 9" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/slide10.png" alt="Презентация — слайд 10" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/slide11.png" alt="Презентация — слайд 11" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/slide12.png" alt="Презентация — слайд 12" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/slide13.png" alt="Презентация — слайд 13" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/slide14.png" alt="Презентация — слайд 14" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/slide15.png" alt="Презентация — слайд 15" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/slide16.png" alt="Презентация — слайд 16" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/slide17.png" alt="Презентация — слайд 17" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/slide18.png" alt="Презентация — слайд 18" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/slide19.png" alt="Презентация — слайд 19" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/slide20.png" alt="Презентация — слайд 20" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/slide21.png" alt="Презентация — слайд 21" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/slide22.png" alt="Презентация — слайд 22" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/slide23.png" alt="Презентация — слайд 23" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/slide24.png" alt="Презентация — слайд 24" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/slide25.png" alt="Презентация — слайд 25" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/slide26.png" alt="Презентация — слайд 26" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/slide27.png" alt="Презентация — слайд 27" loading="lazy"></div>
+                <div class="gallery-item"><img src="./img/avia/slide28.png" alt="Презентация — слайд 28" loading="lazy"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <section class="px-6 py-12">
+        <div class="section text-center text-xs text-neutral-400">
+            © 2026 ninoallure · <a href="index.html" class="underline">← назад в портфолио</a>
+        </div>
+    </section>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #d6d3d1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #a8a29e; }
+    </style>
+
+    <script>
+        class SmoothScroll {
+            constructor(options = {}) {
+                this.targetY = window.scrollY;
+                this.currentY = window.scrollY;
+                this.ease = options.ease || 0.075;
+                this.isScrolling = false;
+                this.init();
+            }
+            init() {
+                document.documentElement.style.scrollBehavior = 'auto';
+                window.addEventListener('wheel', (e) => {
+                    e.preventDefault();
+                    this.targetY += e.deltaY;
+                    this.targetY = Math.max(0, Math.min(this.targetY, document.body.scrollHeight - window.innerHeight));
+                    if (!this.isScrolling) { this.isScrolling = true; this.animate(); }
+                }, { passive: false });
+            }
+            animate() {
+                const diff = this.targetY - this.currentY;
+                if (Math.abs(diff) < 0.5) { this.currentY = this.targetY; window.scrollTo(0, this.currentY); this.isScrolling = false; return; }
+                this.currentY += diff * this.ease;
+                window.scrollTo(0, this.currentY);
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                new SmoothScroll({ ease: 0.08 });
+            }
+        });
+    </script>
+</body>
+</html>

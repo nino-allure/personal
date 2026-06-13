@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anton Markov — Portfolio</title>
+    <meta name="description" content="Антон Марков — дизайнер визуальных систем и интерфейсов. Бренды, айдентика, веб." />
+    <meta property="og:title" content="Anton Markov — Portfolio" />
+    <meta property="og:description" content="Визуальные системы и интерфейсы. Упор на эстетику, скорость и ощущение." />
+    <meta property="og:image" content="./img/og.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://nino-allure.github.io/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Anton Markov — Portfolio" />
+    <meta name="twitter:description" content="Визуальные системы и интерфейсы. Упор на эстетику, скорость и ощущение." />
+    <meta name="twitter:image" content="./img/og.png" />
+    <link rel="canonical" href="https://nino-allure.github.io/" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Anton Markov",
+      "alternateName": "ninoallure",
+      "url": "https://nino-allure.github.io/",
+      "jobTitle": "Дизайнер визуальных систем",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Медиацентр КГПАОУ Авиатехникум",
+        "address": { "@type": "PostalAddress", "addressLocality": "Пермь", "addressCountry": "RU" }
+      },
+      "sameAs": ["https://t.me/ninoallure"]
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fafaf9;
+            color: #1c1917;
+        }
+
+        .fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 0.7s ease;
+        }
+
+        .fade.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .big {
+            font-size: clamp(36px, 6vw, 80px);
+            font-weight: 800;
+            line-height: 1.05;
+        }
+
+        .section {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        .card-link {
+            display: block;
+            transition: opacity 0.3s;
+        }
+
+        .card-link:hover {
+            opacity: 0.85;
+        }
+
+        .photo-bl {
+            transition: filter 0.3s ease;
+        }
+
+        .photo-bl:hover {
+            filter: blur(2px);
+        }
+
+        /* job timeline */
+        .job-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #1c1917;
+            flex-shrink: 0;
+            margin-top: 6px;
+        }
+
+        .job-line {
+            width: 1px;
+            background: #e7e5e4;
+            flex-shrink: 0;
+            margin: 4px 0 4px 3.5px;
+            min-height: 24px;
+        }
+
+        /* portfolio grid */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .portfolio-card {
+            border: 0.5px solid #e7e5e4;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #fff;
+            transition: opacity 0.3s, transform 0.3s;
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .portfolio-card:hover {
+            opacity: 0.88;
+            transform: translateY(-2px);
+        }
+
+        .portfolio-card-img {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: 0;
+            display: block;
+        }
+
+        .portfolio-card-img.portrait {
+            aspect-ratio: 3/4;
+        }
+
+        .portfolio-card-img.wide {
+            aspect-ratio: 16/9;
+        }
+
+        .portfolio-card-body {
+            padding: 1rem 1.25rem 1.25rem;
+        }
+
+        .portfolio-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            color: #78716c;
+            background: #f5f5f4;
+            border-radius: 99px;
+            padding: 3px 10px;
+            margin-bottom: 8px;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const items = document.querySelectorAll(".fade");
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add("show");
+                });
+            }, { threshold: 0.1 });
+            items.forEach(el => observer.observe(el));
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- hero -->
+    <section class="min-h-[85vh] flex items-center px-6">
+        <div class="section">
+            <div class="grid md:grid-cols-12 gap-8 items-end">
+                <div class="md:col-span-7">
+                    <h1 class="big">Anton<br>Markov</h1>
+                    <p class="mt-8 text-neutral-500 max-w-md text-lg leading-relaxed">
+                        визуальные системы и интерфейсы. упор на эстетику, скорость и ощущение.
+                    </p>
+                </div>
+                <div class="md:col-span-5 flex md:justify-end">
+                    <div class="relative group">
+                        <div class="relative w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-2 border-neutral-200">
+                            <img src="./img/me.PNG" alt="Антон Марков" width="256" height="256"
+                                class="w-full h-full object-cover transition-all duration-700" loading="eager">
+                        </div>
+                        <div class="absolute -bottom-2 -left-4 md:-left-8 bg-white border px-3 py-1.5 rounded-full text-xs text-neutral-600 shadow-sm">
+                            available for work
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- about -->
+    <section class="px-6 py-24 fade">
+        <div class="section grid md:grid-cols-2 gap-10">
+            <div>
+                <h2 class="text-xl font-semibold mb-4">о себе</h2>
+            </div>
+            <div>
+                <p class="text-sm text-neutral-600 leading-relaxed">
+                    делаю визуальные системы и интерфейсы.
+                    фокус на чистой эстетике, быстрой реализации и сильном визуальном ощущении от каждого проекта.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- опыт работы — авиатехникум -->
+    <section class="px-6 py-24 fade">
+        <div class="section">
+            <h2 class="big">опыт</h2>
+
+            <div class="mt-12 flex gap-6">
+                <div class="flex flex-col items-center">
+                    <div class="job-dot"></div>
+                    <div class="job-line flex-1"></div>
+                </div>
+                <div class="pb-12">
+                    <p class="text-xs text-neutral-400 uppercase tracking-widest mb-1">2026 — н.в.</p>
+                    <h3 class="text-lg font-semibold">дизайнер</h3>
+                    <p class="text-sm text-neutral-500 mt-0.5 mb-4">
+                        Медиацентр КГПАОУ «Авиатехникум» · Пермь<br>
+                        <span class="text-neutral-400">лидер в сфере IT-образования в Пермском крае</span>
+                    </p>
+                    <div class="space-y-3 max-w-lg">
+                        <p class="text-sm text-neutral-600 leading-relaxed">
+                            разрабатываю фирменный стиль для разных направлений техникума — от студенческих мероприятий до официальных коммуникаций.
+                        </p>
+                        <p class="text-sm text-neutral-600 leading-relaxed">
+                            работаю с контент-планами и аналитикой, повышаю охваты благодаря продуманному рабочему дизайну.
+                        </p>
+                        <p class="text-sm text-neutral-600 leading-relaxed">
+                            быстрая адаптация под разные задачи: принт, соцсети, айдентика, презентации.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- stack -->
+    <section class="px-6 py-24 fade">
+        <div class="section grid md:grid-cols-2 gap-10">
+            <div>
+                <h2 class="text-xl font-semibold mb-4">стек</h2>
+            </div>
+            <div>
+                <p class="text-sm text-neutral-600 leading-relaxed">
+                    figma / photoshop / illustrator / tailwind css / html / css
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- selected works -->
+    <section class="px-6 pt-24 fade">
+        <div class="section">
+            <h2 class="big">избранные<br>работы</h2>
+        </div>
+    </section>
+
+    <!-- case: авиатехникум -->
+    <section class="px-6 py-16 fade">
+        <div class="section">
+            <a href="case-aviatekhnikum.html" class="card-link">
+                <div class="photo-bl rounded-[20px] overflow-hidden bg-neutral-100 flex items-center justify-center" style="min-height:280px;">
+                    <img src="./img/avia-cover.png" alt="Тьюторский корпус КГПАОУ Авиатехникум — айдентика и контент"
+                        width="900" height="506" loading="lazy" style="border-radius:0; margin:0;">
+                </div>
+                <div class="mt-6 grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-2xl font-semibold">Тьюторский корпус</h3>
+                        <p class="text-sm text-neutral-500 mt-1">айдентика / смм / презентации · КГПАОУ Авиатехникум</p>
+                    </div>
+                    <p class="text-sm text-neutral-600">
+                        фирменный стиль, четыре серии постов, баннеры, сторис и шаблон из 28 слайдов — полная система для нового направления техникума.
+                    </p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- case: поколения весны -->
+    <section class="px-6 py-16 fade">
+        <div class="section">
+            <a href="case-pokoleniya-vesny.html" class="card-link">
+                <img src="./img/bbk.png" alt="Поколения Весны — брендбук, айдентика программы Пермского края"
+                    width="900" height="506" loading="lazy" class="photo-bl">
+                <div class="mt-6 grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-2xl font-semibold">Поколения Весны</h3>
+                        <p class="text-sm text-neutral-500 mt-1">айдентика / бренд-система / стратегия</p>
+                    </div>
+                    <p class="text-sm text-neutral-600">
+                        программа, объединяющая школьников, студентов и выпускников в единую творческую экосистему пермского края.
+                    </p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- case: replica -->
+    <section class="px-6 py-16 fade">
+        <div class="section">
+            <a href="case-replica.html" class="card-link">
+                <img src="./img/gat.png" alt="Margiela Replica GAT — редакционное исследование кроссовка"
+                    width="900" height="506" loading="lazy" class="photo-bl">
+                <div class="mt-6 grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-2xl font-semibold">Replica Sneaker</h3>
+                        <p class="text-sm text-neutral-500 mt-1">editorial / fashion storytelling / visual research</p>
+                    </div>
+                    <p class="text-sm text-neutral-600">
+                        визуальное исследование культового кроссовка — от военной утилитарности до модного культового объекта.
+                    </p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- CASE 3: Mansion Music -->
+    <section class="px-6 py-16 fade">
+        <div class="section">
+            <a href="case-mansion-music.html" class="card-link">
+                <img src="./img/mansion.png" alt="Mansion Music" class="photo-bl">
+                <div class="mt-6 grid md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-2xl font-semibold">Mansion Music</h3>
+                        <p class="text-sm text-neutral-500 mt-1">веб-дизайн / ux / seo</p>
+                    </div>
+                    <p class="text-sm text-neutral-600">
+                        платформа для тех, кто хочет расширить музыкальный кругозор. 
+                    </p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- WEB PROJECTS -->
+    <section class="px-6 py-24 fade">
+        <div class="section">
+            <h2 class="text-xl font-semibold mb-8">веб-проекты</h2>
+            <div class="grid md:grid-cols-3 gap-4">
+                <a href="https://nino-allure.github.io/eco-by-nino-allure/" target="_blank" rel="noopener"
+                    class="block border rounded-xl overflow-hidden hover:opacity-85 transition-opacity">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="./img/eco.png" alt="eco by ninoallure — сайт и магазин дизайнерской одежды"
+                            loading="lazy" class="w-full h-full object-cover rounded-none photo-bl">
+                    </div>
+                    <div class="p-6">
+                        <p class="font-semibold text-sm">eco by ninoallure</p>
+                        <p class="text-neutral-500 mt-2 text-sm">сайт/магазин для дизайнерской одежды</p>
+                    </div>
+                </a>
+                <a href="https://nino-allure.github.io/uchebnaya_praktika_site1/" target="_blank" rel="noopener"
+                    class="block border rounded-xl overflow-hidden hover:opacity-85 transition-opacity">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="./img/wealth.png" alt="WealthFront — лэндинг для финтех-компании"
+                            loading="lazy" class="w-full h-full object-cover rounded-none photo-bl">
+                    </div>
+                    <div class="p-6">
+                        <p class="font-semibold text-sm">WealthFront</p>
+                        <p class="text-neutral-500 mt-2 text-sm">лэндинг для финтеха</p>
+                    </div>
+                </a>
+                <a href="https://nino-allure.github.io/uchebnaya_praktika_site2/" target="_blank" rel="noopener"
+                    class="block border rounded-xl overflow-hidden hover:opacity-85 transition-opacity">
+                    <div class="aspect-video overflow-hidden">
+                        <img src="./img/trip.png" alt="Trip Страхование — лэндинг страховой компании"
+                            loading="lazy" class="w-full h-full object-cover rounded-none photo-bl">
+                    </div>
+                    <div class="p-6">
+                        <p class="font-semibold text-sm">Trip Страхование</p>
+                        <p class="text-neutral-500 mt-2 text-sm">лэндинг для компании страхований</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- contacts -->
+    <section class="px-6 py-24 fade">
+        <div class="section grid md:grid-cols-2 gap-10">
+            <div>
+                <h2 class="text-xl font-semibold mb-4">контакты</h2>
+            </div>
+            <div class="text-sm space-y-2">
+                <p><a href="https://t.me/ninoallure" target="_blank" rel="noopener" class="underline">telegram</a></p>
+                <p><a href="./Resume.pdf" download class="underline">скачать cv</a></p>
+                <p><a href="mailto:kxzuy@vk.com" class="underline">kxzuy@vk.com</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <section class="px-6 py-12">
+        <div class="section text-center text-xs text-neutral-400">
+            © 2026 ninoallure
+        </div>
+    </section>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #d6d3d1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #a8a29e; }
+    </style>
+
+    <script>
+        class SmoothScroll {
+            constructor(options = {}) {
+                this.targetY = window.scrollY;
+                this.currentY = window.scrollY;
+                this.ease = options.ease || 0.075;
+                this.isScrolling = false;
+                this.init();
+            }
+            init() {
+                document.documentElement.style.scrollBehavior = 'auto';
+                window.addEventListener('wheel', (e) => {
+                    e.preventDefault();
+                    this.targetY += e.deltaY;
+                    this.targetY = Math.max(0, Math.min(this.targetY, document.body.scrollHeight - window.innerHeight));
+                    if (!this.isScrolling) { this.isScrolling = true; this.animate(); }
+                }, { passive: false });
+            }
+            animate() {
+                const diff = this.targetY - this.currentY;
+                if (Math.abs(diff) < 0.5) { this.currentY = this.targetY; window.scrollTo(0, this.currentY); this.isScrolling = false; return; }
+                this.currentY += diff * this.ease;
+                window.scrollTo(0, this.currentY);
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                new SmoothScroll({ ease: 0.08 });
+            }
+        });
+    </script>
+</body>
+</html>

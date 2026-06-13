@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Поколения Весны — Anton Markov</title>
+    <meta name="description" content="Айдентика и бренд-система для образовательной программы «Поколения Весны», Пермский край. Диплом лауреата 1 степени." />
+    <meta property="og:title" content="Поколения Весны — Anton Markov" />
+    <meta property="og:description" content="Айдентика / бренд-система / стратегия. Пермский край · 2026" />
+    <meta property="og:image" content="./img/bbk.png" />
+    <meta property="og:type" content="website" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fafaf9;
+            color: #1c1917;
+        }
+
+        .fade {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: 0.7s ease;
+        }
+
+        .fade.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .big {
+            font-size: clamp(36px, 6vw, 80px);
+            font-weight: 800;
+            line-height: 1.05;
+        }
+
+        .section {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 20px;
+        }
+    </style>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const items = document.querySelectorAll(".fade");
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) entry.target.classList.add("show");
+                });
+            }, { threshold: 0.1 });
+            items.forEach(el => observer.observe(el));
+        });
+    </script>
+</head>
+
+<body>
+
+    <!-- HERO -->
+    <section class="min-h-[70vh] flex items-center px-6">
+        <div class="section">
+            <a href="index.html" class="text-sm text-neutral-400">← назад</a>
+
+            <h1 class="big mt-6">
+                Поколения<br>Весны
+            </h1>
+
+            <p class="mt-6 text-neutral-500 max-w-md">
+                айдентика / бренд-система / стратегия · Пермский край · 2026
+            </p>
+        </div>
+    </section>
+
+    <!-- PREVIEW -->
+    <section class="px-6 fade">
+        <div class="section">
+            <img src="./img/bbk.png" alt="Поколения Весны — главный экран брендбука" loading="eager">
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="px-6 py-24 fade">
+        <div class="section grid md:grid-cols-2 gap-10">
+            <div>
+                <h2 class="text-xl font-semibold mb-4">о проекте</h2>
+            </div>
+            <div>
+                <p class="text-sm text-neutral-600 leading-relaxed">
+                    «Поколения Весны» — программа, объединяющая школьников, студентов и выпускников в единую творческую
+                    экосистему. задача — создать визуальный язык, который отражает рост, переход между этапами и энергию
+                    весны.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- IDEA -->
+    <section class="px-6 py-24 fade">
+        <div class="section">
+            <h2 class="big">весна — это<br>не сезон</h2>
+            <p class="text-sm text-neutral-600 max-w-2xl mt-6 leading-relaxed">
+                визуальная система построена на контрасте: лёгкость и структура, энергия и стабильность, рост и переход.
+                это состояние, которое нужно передать через каждый элемент айдентики.
+            </p>
+        </div>
+    </section>
+
+    <!-- COLORS -->
+    <section class="px-6 py-24 fade">
+        <div class="section grid md:grid-cols-2 gap-10">
+            <div>
+                <h2 class="text-xl font-semibold mb-4">цветовая система</h2>
+            </div>
+            <div>
+                <div class="flex gap-3 mb-4">
+                    <div class="w-16 h-16 bg-[#212121] rounded-xl"></div>
+                    <div class="w-16 h-16 bg-[#EDB217] rounded-xl"></div>
+                    <div class="w-16 h-16 bg-[#F4143F] rounded-xl"></div>
+                    <div class="w-16 h-16 bg-[#FCF5E4] border rounded-xl"></div>
+                </div>
+                <p class="text-sm text-neutral-600">
+                    чёрный — фундамент · жёлтый — энергия · красный — динамика · белый — воздух
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SYSTEM -->
+    <section class="px-6 py-24 fade">
+        <div class="section grid md:grid-cols-2 gap-10">
+            <div>
+                <h2 class="text-xl font-semibold mb-4">система</h2>
+            </div>
+            <div>
+                <p class="text-sm text-neutral-600 leading-relaxed">
+                    контраст шрифтов и цветовых акцентов создаёт баланс между официальностью и творческой свободой.
+                    система масштабируется на фестивали, медиа и образовательные форматы.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RESULT -->
+    <section class="px-6 py-24 fade">
+        <div class="section">
+            <h2 class="big">результат</h2>
+            <div class="grid md:grid-cols-2 gap-10 mt-8">
+                <p class="text-sm text-neutral-600 leading-relaxed">
+                    проект получил диплом лауреата 1 степени.
+                </p>
+                <p class="text-sm text-neutral-600 leading-relaxed">
+                    создана универсальная бренд-система для долгосрочного использования в образовательных и культурных
+                    инициативах региона.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="px-6 py-24 fade">
+        <div class="section space-y-6">
+            <h2 class="text-xl font-semibold mb-8">слайды</h2>
+            <img src="./img/slide1.png" alt="Поколения Весны — слайд 1" loading="lazy">
+            <img src="./img/slide2.png" alt="Поколения Весны — слайд 2" loading="lazy">
+            <img src="./img/slide3.png" alt="Поколения Весны — слайд 3" loading="lazy">
+            <img src="./img/slide4.png" alt="Поколения Весны — слайд 4" loading="lazy">
+            <img src="./img/slide5.png" alt="Поколения Весны — слайд 5" loading="lazy">
+            <img src="./img/slide6.png" alt="Поколения Весны — слайд 6" loading="lazy">
+            <img src="./img/slide7.png" alt="Поколения Весны — слайд 7" loading="lazy">
+            <img src="./img/slide8.png" alt="Поколения Весны — слайд 8" loading="lazy">
+            <img src="./img/slide9.png" alt="Поколения Весны — слайд 9" loading="lazy">
+            <img src="./img/slide10.png" alt="Поколения Весны — слайд 10" loading="lazy">
+            <img src="./img/slide11.png" alt="Поколения Весны — слайд 11" loading="lazy">
+            <img src="./img/slide12.png" alt="Поколения Весны — слайд 12" loading="lazy">
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <section class="px-6 py-12">
+        <div class="section text-center text-xs text-neutral-400">
+            © 2026 ninoallure · <a href="index.html" class="underline">← назад в портфолио</a>
+        </div>
+    </section>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #d6d3d1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #a8a29e; }
+    </style>
+
+    <script>
+        class SmoothScroll {
+            constructor(options = {}) {
+                this.targetY = window.scrollY;
+                this.currentY = window.scrollY;
+                this.ease = options.ease || 0.075;
+                this.isScrolling = false;
+                this.init();
+            }
+            init() {
+                document.documentElement.style.scrollBehavior = 'auto';
+                window.addEventListener('wheel', (e) => {
+                    e.preventDefault();
+                    this.targetY += e.deltaY;
+                    this.targetY = Math.max(0, Math.min(this.targetY, document.body.scrollHeight - window.innerHeight));
+                    if (!this.isScrolling) { this.isScrolling = true; this.animate(); }
+                }, { passive: false });
+            }
+            animate() {
+                const diff = this.targetY - this.currentY;
+                if (Math.abs(diff) < 0.5) { this.currentY = this.targetY; window.scrollTo(0, this.currentY); this.isScrolling = false; return; }
+                this.currentY += diff * this.ease;
+                window.scrollTo(0, this.currentY);
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                new SmoothScroll({ ease: 0.08 });
+            }
+        });
+    </script>
+</body>
+</html>
