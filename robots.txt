@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nino-allure.github.io/sitemap.xml
+Sitemap: https://ninoallure.vercel.app/sitemap.xml
